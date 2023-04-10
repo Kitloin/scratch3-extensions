@@ -96,3 +96,10 @@ Alert (args, util){
 }
 
 module.exports = JS;
+window.vm = findReactComponent(document.getElementsByClassName("stage-header_stage-size-row_14N65")[0]).props.vm;
+
+(function() {
+    var extensionInstance = new JS(window.vm.extensionManager.runtime)
+    var serviceName = window.vm.extensionManager._registerInternalExtension(extensionInstance)
+    window.vm.extensionManager._loadedExtensions.set(extensionInstance.getInfo().id, serviceName)
+})()
