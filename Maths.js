@@ -88,7 +88,7 @@ class ScratchMath {
 	getInfo() {
 	    return {
 	    	id: "math",
-	    	name: "Black",
+	    	name: "Xtra",
 	    	blocks: [
 	        auto_block('reporter', "Vec", "vector [a] [b] [c]"),
 	        auto_block('reporter', "Arr", "list [a] [b]"),
