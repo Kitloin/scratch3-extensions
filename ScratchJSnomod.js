@@ -127,7 +127,15 @@ class ScratchMath {
 	}
 
 	Out({a}) {
-		eval(a)
+		try {
+eval(a)
+  
+
+} catch (err) {
+
+  alert(err)
+
+}
 	}
 
 	Get   = mat_reporter_f(get)
