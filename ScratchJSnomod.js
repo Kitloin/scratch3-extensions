@@ -93,7 +93,7 @@ class ScratchMath {
 	        {
 	        	blockType: 'command',
 	        	opcode: 'Out',
-	        	text: 'JS| run [a]',
+	        	text: '羊 run [a]',
 	        	arguments: {
 	        		a: {
 	        			type: "string",
