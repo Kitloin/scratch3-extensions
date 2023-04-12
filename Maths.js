@@ -88,12 +88,12 @@ class ScratchMath {
 	getInfo() {
 	    return {
 	    	id: "math",
-	    	name: "Xtra",
+	    	name: "JS",
 	    	blocks: [
 	        {
 	        	blockType: 'command',
 	        	opcode: 'Out',
-	        	text: 'run [a]',
+	        	text: 'JS| run [a]',
 	        	arguments: {
 	        		a: {
 	        			type: "string",
