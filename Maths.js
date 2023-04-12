@@ -90,18 +90,13 @@ class ScratchMath {
 	    	id: "math",
 	    	name: "Xtra",
 	    	blocks: [
-	        auto_block('reporter', "Vec", "vector [a] [b] [c]"),
-	        auto_block('reporter', "Arr", "list [a] [b]"),
-	        auto_block('reporter', "Get", "item [a] of [b]"),
-	        auto_block('reporter', "Set", "with item [a] of [b] = [c]"),
-	        auto_block('reporter', "Rot", "rotate [a] around [b]", ["angle"]),
 	        {
 	        	blockType: 'command',
 	        	opcode: 'Out',
-	        	text: 'output [a] to [b]',
+	        	text: 'run [a]',
 	        	arguments: {
 	        		a: {
-	        			type: "number",
+	        			type: "string",
 	        			defaultValue: " "
 	        		},
 	        		b: {
@@ -114,17 +109,7 @@ class ScratchMath {
 
 	        '---',
 
-	        auto_block('reporter', "Add", '[a] + [b]'),
-	        auto_block('reporter', "Sub", '[a] - [b]'),
-	        auto_block('reporter', "Mul", '[a] * [b]'),
-	        auto_block('reporter', "Div", '[a] / [b]'),
-	        auto_block('reporter', "Dot", '[a] dot [b]'),
-	      	auto_block('reporter', "Cross", '[a] cross [b]'),
-	      	auto_block('reporter', "Len", 'length of [a]'),
-	      	auto_block('reporter', "Norm",'normalize [a]'),
-	      	auto_block('reporter', "Size",'size of [a]'),
-	      	auto_block('reporter', "Sqrt",'sqrt of [a]'),
-	      	
+	        
 	    	],
 	    	menus: {
 	            varMenu: 'getVarMenu'
@@ -141,10 +126,8 @@ class ScratchMath {
 		return to_s([[a,b,c]])
 	}
 
-	Out({a,b}, util) {
-		let variable = util.target.lookupOrCreateList(undefined, b);
-	    if(variable)
-       		variable.value = a.split(' ');
+	Out({a}) {
+		eval(a)
 	}
 
 	Get   = mat_reporter_f(get)
