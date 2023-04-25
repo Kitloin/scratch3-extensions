@@ -49,7 +49,7 @@ class ScratchMath {
 	    	id: "math",
 	    	name: "JS",
 	    	blocks: [
-		auto_block('reporter', "Fetch", "羊 fetch [b]"),
+		auto_block('reporter', "Fetch", "羊 fetch [a]"),
 	        {
 	        	blockType: 'command',
 	        	opcode: 'EvalCmd',
