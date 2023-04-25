@@ -49,6 +49,7 @@ class ScratchMath {
 	    	id: "math",
 	    	name: "JS",
 	    	blocks: [
+		auto_block('reporter', "Fetch", "羊 fetch [b]"),
 	        {
 	        	blockType: 'command',
 	        	opcode: 'EvalCmd',
@@ -85,7 +86,13 @@ eval(a)
 }
 	}
 
-	
+	Fetch({a}) {
+		let file = a
+		fetch (file)
+		.then(x => x.text())
+		.then(y => let ans = y);
+		return ans
+	}	
 }
 
 // ============== globalize vm and load extension ===============
