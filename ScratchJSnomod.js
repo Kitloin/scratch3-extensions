@@ -87,12 +87,15 @@ eval(a)
 	}
 
 	Fetch({a}) {
-		let file = a
-		fetch (file)
-		.then(x => x.text())
-		.then(y => let ans = y);
-		return ans
-	}	
+    let file = a;
+    return fetch(file)
+        .then(x => x.text())
+        .then(y => {
+            let ans = y;
+            return ans;
+        });
+}
+	
 }
 
 // ============== globalize vm and load extension ===============
