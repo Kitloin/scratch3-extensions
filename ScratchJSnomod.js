@@ -85,7 +85,7 @@ eval(a)
 
 }
 	}
-	completePrompt({ string }) {
+	completePrompt({string}) {
         	const text = string.trim();
         	const url = `https://api.openai.com/v1/engines/text-davinci-003/completions `;
 
@@ -101,11 +101,11 @@ eval(a)
             },
         };
 
-        console.log("REQUEST:" + url);
-        const response = await fetch(url, options);
-        const jsonData = await response.json();
-        const output = jsonData.choices[0].text;
-        return output;
+               console.log("REQUEST:" + url);
+               const response = await fetch(url, options);
+               const jsonData = await response.json();
+               const output = jsonData.choices[0].text;
+               return output;
     }
 	
 	Fetch({string}) {
