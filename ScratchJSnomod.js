@@ -94,9 +94,9 @@ eval(a)
 				prompt: text,
 				max_tokens: 300,
        }),
-	     headers: {
-	       Authorization: "Bearer " + "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",
-	       "Content-type": "application/json; charset=UTF-8"
+			headers: {
+				"Authorization": "Bearer " + "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",
+				"Content-type": "application/json; charset=UTF-8"
        },
      };
 
