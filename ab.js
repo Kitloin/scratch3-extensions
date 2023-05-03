@@ -47,24 +47,9 @@ class ScratchMath {
 	getInfo() {
 	    return {
 	    	id: "math",
-	    	name: "JS",
+	    	name: "AI",
 	    	blocks: [
-		auto_block('reporter', "Fetch", "羊 fetch [a]"),
-	        {
-	        	blockType: 'command',
-	        	opcode: 'EvalCmd',
-	        	text: '羊 run [a]',
-	        	arguments: {
-	        		a: {
-	        			type: "string",
-	        			defaultValue: " "
-	        		},
-	        		b: {
-	        			type: "string",
-	        			defaultValue:" "
-	        		}
-	        	}
-	        },
+		auto_block('reporter', "completePrompt", "羊 complete [a]")
 
 	        '---',
 
