@@ -86,15 +86,13 @@ eval(a)
 }
 	}
 	completePrompt({a}) {
-     const text = a.trim();
-     const url = `https://api.openai.com/v1/engines/text-davinci-003/completions`;
-
-     const options = {
-
-	     method: "POST",
-	     body: JSON.stringify({
-	       prompt: text,
-	       max_tokens: 300,
+		const text = a.trim();
+		const url = `https://api.openai.com/v1/engines/text-davinci-003/completions`;
+		const options = {
+			method: "POST",
+			body: JSON.stringify({
+				prompt: text,
+				max_tokens: 300,
        }),
 	     headers: {
 	       Authorization: "Bearer " + "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",
