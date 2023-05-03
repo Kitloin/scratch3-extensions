@@ -49,14 +49,13 @@ class ScratchMath {
 	    	id: "math",
 	    	name: "JS",
 	    	blocks: [
-		auto_block('reporter', "Fetch", "羊 fetch [string]"),
-		auto_block('reporter', "completePrompt", "羊 complete [string]"),
+		auto_block('reporter', "Fetch", "羊 fetch [a]"),
 	        {
 	        	blockType: 'command',
 	        	opcode: 'EvalCmd',
-	        	text: '羊 run [string]',
+	        	text: '羊 run [a]',
 	        	arguments: {
-	        		string: {
+	        		a: {
 	        			type: "string",
 	        			defaultValue: " "
 	        		},
@@ -75,7 +74,7 @@ class ScratchMath {
 	    }
 	}
 
-	EvalCmd({string}) {
+	EvalCmd({a}) {
 		try {
 eval(a)
   
@@ -86,29 +85,8 @@ eval(a)
 
 }
 	}
-  completePrompt({string}) {
-    const text = string.trim();
-    const url = `https://api.openai.com/v1/engines/text-davinci-003/completions`;
 
-    const options = {
-      method: "POST",
-      body: JSON.stringify({
-        prompt: text,
-        max_tokens: 300,
-      }),
-      headers: {
-        Authorization: "Bearer " + "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",
-        "Content-type": "application/json; charset=UTF-8"
-      },
-    };
-
-    console.log("REQUEST:" + url);
-    const response = await fetch(url, options);
-    const jsonData = await response.json();
-    const output = jsonData.choices[0].text;
-    return output;
-  }	
-	Fetch({string}) {
+	Fetch({a}) {
     let file = a;
     return fetch(file)
         .then(x => x.text())
