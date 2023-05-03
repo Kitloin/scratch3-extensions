@@ -23,25 +23,6 @@ class ScratchMath {
 
 	constructor(runtime) {
 		this.runtime = runtime
-		this.tempElem = document.createElement("link")
-			this.tempElem.rel = "stylesheet"
-			this.tempElem.type = "text/css"
-			this.tempElem.href = "https://scratchjs.crossscar.repl.co/styles.css"
-			document.head.appendChild(this.tempElem)
-			
-			this.consoleElem = document.createElement("div")
-			this.consoleElems = {}
-			this.consoleElem.classList.add("ScratchJS-console")
-			this.consoleElems.clearBtn = document.createElement("button")
-			this.consoleElems.clearBtn.classList.add("ScratchJS-console-clear")
-			this.consoleElems.clearBtn.innerHTML = "X"
-			this.consoleElems.clearBtn.title = "Clear Console"
-			this.consoleElem.appendChild(this.consoleElems.clearBtn)
-			document.querySelector(".stage-wrapper_stage-wrapper_2bejr").appendChild(this.consoleElem)
-
-			this.consoleElems.clearBtn.addEventListener("click", () => {
-				this.console.clear()
-			})
 	}
 
 	getInfo() {
@@ -61,25 +42,24 @@ class ScratchMath {
 
 	
 	completePrompt({a}) {
-    const text = a.trim();
-    const url = `https://api.openai.com/v1/engines/text-davinci-003/completions`;
-    const options = {
-			method: "POST",
-			body: JSON.stringify({
-				prompt: text,
-				max_tokens: 300,
-		}),	
-			headers: {
-				"Authorization": "Bearer " + "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",
-				"Content-type": "application/json; charset=UTF-8"
-       },
-     };
-        });
-  const response = await fetch(url, options);
-	const jsonData = await response.json();
-	const output = jsonData.choices[0].text;
-	return output;
-    
+const text = a.trim();
+const url = `https://api.openai.com/v1/engines/text-davinci-003/completions`;
+const options = {
+	method: "POST",
+	body: JSON.stringify({
+		prompt: text,
+		max_tokens: 300,
+	}),	
+	headers: {
+		"Authorization": "Bearer " + "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",
+		"Content-type": "application/json; charset=UTF-8"
+	},
+};
+	});
+const response = await fetch(url, options);
+const jsonData = await response.json();
+const output = jsonData.choices[0].text;
+return output;    
 }
 	
 }
