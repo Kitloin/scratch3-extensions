@@ -14,8 +14,8 @@ headers: {
 },
 };
 };
-const response = await fetch(url, options);
-const jsonData = await response.json();
+const response = fetch(url, options);
+const jsonData = response.json();
 const output = jsonData.choices[0].text;
 return output;
 }
