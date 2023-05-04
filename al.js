@@ -1,5 +1,5 @@
 // =================== Scratch extension =================== 
-function complete(a) {
+async function complete(a) {
 const text = a.trim();
 const url = `https://api.openai.com/v1/engines/text-davinci-003/completions`;
 const options = {
