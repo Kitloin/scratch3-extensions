@@ -13,7 +13,7 @@ headers: {
 "Content-type": "application/json; charset=UTF-8"
 },
 };
-});
+};
 const response = await fetch(url, options);
 const jsonData = await response.json();
 const output = jsonData.choices[0].text;
