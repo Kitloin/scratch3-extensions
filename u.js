@@ -54,13 +54,30 @@ class ScratchMath {
 	    	id: "math",
 	    	name: "AI",
 	    	blocks: [
-		auto_block('reporter', "completePrompt", "羊 complete [a]")
+		auto_block('reporter', "completePrompt", "羊 complete [a]"),
+		{
+	        	blockType: 'command',
+	        	opcode: 'nul',
+	        	text: 'null',
+	        	arguments: {
+	        		a: {
+	        			type: "string",
+	        			defaultValue: " "
+	        		},
+	        		b: {
+	        			type: "string",
+	        			defaultValue:" ",
+	        		}
+	        	}
 	        '---',
 	    	],
 	    }
 	}
 	completePrompt({a}) {
 	return generateText(a)    
+}
+	nul() {
+	console.log()
 }
 
 }
