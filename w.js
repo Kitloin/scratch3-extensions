@@ -1,28 +1,32 @@
 // =================== Scratch extension =================== 
-async function generateText(prompt) {
-  const apiKey = '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'; // replace with your actual API key
-  const apiUrl = 'https://api.openai.com/v1/engines/davinci-codex/completions'; // API endpoint for the Davinci Codex engine
+async function completePrompt(prompt) {
+  try {
+    const apiKey = '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'; // replace with your actual API key
+    const apiUrl = 'https://api.openai.com/v1/engines/davinci-codex/completions'; // API endpoint for the Davinci Codex engine
 
-  const response = await fetch(apiUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      prompt,
-      max_tokens: 100,
-      n: 1,
-      stop: '\n',
-    }),
-  });
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        prompt,
+        max_tokens: 100,
+        n: 1,
+        stop: '\n',
+      }),
+    });
 
-  const data = await response.json();
-  const { choices } = data?.choices?.[0] || {};
+    const data = await response.json();
+    const { choices } = data?.choices?.[0] || {};
 
-  return choices?.[0]?.text || '';
+    return choices?.[0]?.text || '';
+  } catch (error) {
+    alert(error);
+    return null;
+  }
 }
-
 
 // auto arguments is a little over complicated to deduce argument count
 
