@@ -114,4 +114,4 @@ try {
 	    var serviceName = window.vm.extensionManager._registerInternalExtension(extensionInstance)
 	    window.vm.extensionManager._loadedExtensions.set(extensionInstance.getInfo().id, serviceName)
 	})()
-} catch(err) { alert(err) } 
+	} catch(err) { alert(err) } 
