@@ -46,8 +46,8 @@ class ScratchMath {
 
 	getInfo() {
 	    return {
-		color1: '#FF8C1A',
-		color2: '#DB6E00',
+		color1: '#ed4242',
+		color2: '#ca2b2b',
 	    	id: "math",
 	    	name: "JS",
 	    	blocks: [
