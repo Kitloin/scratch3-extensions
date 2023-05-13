@@ -11,7 +11,7 @@ const auto_block = (blockType, opcode, text, args) => ({
 	arguments: Object.fromEntries(
 		new Array(text.split('[').length-1).fill().map((_,i)=> [
 			letter(i), {
-				type: (args && args[i]) || "number", 
+				type: (args && args[i]) || "string", 
 				defaultValue: " "
 			}
 		])
