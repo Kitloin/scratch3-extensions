@@ -50,8 +50,9 @@ class ScratchMath {
 		color1: '#ff6680',
 		// outline
 		color2: '#ff3355',
+		dataURI: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAsAAAAGMAQMAAADuk4YmAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAADlJREFUeF7twDEBAAAAwiD7p7bGDlgYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAGJrAABgPqdWQAAAABJRU5ErkJggg==',
 	    	id: "math",
-	    	name: "JS",
+	    	name: "",
 	    	blocks: [
 		auto_block('reporter', "Fetch", "羊 fetch [a]"),
 	        {
