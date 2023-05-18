@@ -64,10 +64,19 @@ class ScratchMath {
 	        			type: "string",
 	        			defaultValue: " "
 	        		},
+				PATH: {
+	        			type: "string",
+	        			defaultValue:" "
+	        		},
+				JSON_STRING: {
+	        			type: "string",
+	        			defaultValue:" "
+	        		},
 	        		b: {
 	        			type: "string",
 	        			defaultValue:" "
 	        		}
+				
 	        	}
 	        },
 
