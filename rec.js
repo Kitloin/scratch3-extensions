@@ -12,7 +12,7 @@ recognition.continuous = true
 
 recognition.onresult = function(event) {
 
- var current = event.resultIndex;
+ current = event.resultIndex;
 
  transcript = event.results[current][0].transcript
  
@@ -57,36 +57,10 @@ class ScratchMath {
 	        {
 	        	blockType: 'command',
 	        	opcode: 'Start',
-	        	text: '羊 start',
+	        	text: '羊 start/stop',
 	        	arguments: {
-	        		a: {
-	        			type: "string",
-	        			defaultValue: " "
-	        		},
-				PATH: {
-	        			type: "string",
-	        			defaultValue:" "
-	        		},
-				JSON_STRING: {
-	        			type: "string",
-	        			defaultValue:" "
-	        		},
-	        		b: {
-	        			type: "string",
-	        			defaultValue:" "
-	        		}
-				
 	        	}
 	        },
-          {
-	        	blockType: 'command',
-	        	opcode: 'Stop',
-	        	text: '羊 stop',
-	        	arguments: {
-	        		
-	        	}
-	        },
-
 	        '---',
 
 	        
@@ -101,11 +75,6 @@ class ScratchMath {
 
 	Start({a}) {
      recognition.start()
-}
-  
-	Start({a}) {
-     recognition.stop()
-}	
 }
 
 // ============== globalize vm and load extension ===============
