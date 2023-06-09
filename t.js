@@ -1,3 +1,9 @@
+// =================== Scratch extension =================== 
+
+// auto arguments is a little over complicated to deduce argument count
+
+const letter = i => String.fromCharCode(97+i)
+function getrer() {
 window.SpeechRecognition = window.SpeechRecognition
                         || window.webkitSpeechRecognition;
 speechRecognition = window.SpeechRecognition
@@ -5,8 +11,8 @@ speechRecognition = window.SpeechRecognition
 recognition = new speechRecognition()
 
 recognition.continuous = true
+recognition.start()
 
-// recognition is started
 
 recognition.onresult = function(event) {
 
@@ -14,14 +20,10 @@ recognition.onresult = function(event) {
 
  transcript = event.results[current][0].transcript
  
- const rer = content += transcript
+ rer = content += transcript
 }
-// =================== Scratch extension =================== 
-
-// auto arguments is a little over complicated to deduce argument count
-
-const letter = i => String.fromCharCode(97+i)
-
+return rer
+}
 const auto_block = (blockType, opcode, text, args) => ({
 	blockType,
 	opcode,
@@ -38,7 +40,6 @@ const auto_block = (blockType, opcode, text, args) => ({
 const mat_reporter_f = f => o => to_s(f(...new Array(Object.entries(o).length).fill().map((_,i)=> from_s(o[letter(i)]))))
 
 class ScratchMath {
-
 	constructor(runtime) {
 	}
 
@@ -68,13 +69,8 @@ class ScratchMath {
 	}
 
 	speech({}) {
-		return rer
+	return getrer()
 	}
-
-	Start({a}) {
-     recognition.start()
-     content = ''
-}
 
 // ============== globalize vm and load extension ===============
 
