@@ -1,10 +1,10 @@
 window.SpeechRecognition = window.SpeechRecognition
                         || window.webkitSpeechRecognition;
-var speechRecognition = window.SpeechRecognition
+speechRecognition = window.SpeechRecognition
 
-var recognition = new speechRecognition()
+recognition = new speechRecognition()
 
-var content = ''
+content = ''
 
 recognition.continuous = true
 
@@ -14,7 +14,7 @@ recognition.onresult = function(event) {
 
  var current = event.resultIndex;
 
- var transcript = event.results[current][0].transcript
+ transcript = event.results[current][0].transcript
  
  content += transcript
 }
