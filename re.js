@@ -14,7 +14,7 @@ recognition.onresult = function(event) {
 
  transcript = event.results[current][0].transcript
  
- content += transcript
+ rer = content += transcript
 }
 // =================== Scratch extension =================== 
 
@@ -68,7 +68,7 @@ class ScratchMath {
 	}
 
 	speech({}) {
-		return transcript
+		return rer
 	}
 
 	Start({a}) {
