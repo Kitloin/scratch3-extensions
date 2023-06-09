@@ -53,7 +53,7 @@ class ScratchMath {
 	    	id: "math",
 	    	name: "Speech",
 	    	blocks: [
-		auto_block('reporter', "Text", "羊 text"),
+		auto_block('reporter', "speech", "羊 text"),
 	        {
 	        	blockType: 'command',
 	        	opcode: 'Start',
@@ -69,7 +69,7 @@ class ScratchMath {
 	    }
 	}
 
-	Text({}) {
+	speech({}) {
 		return transcript
 	}
 
