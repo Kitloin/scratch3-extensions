@@ -14,7 +14,7 @@ recognition.onresult = function(event) {
 
  transcript = event.results[current][0].transcript
  
- rer = content += transcript
+ const rer = content += transcript
 }
 // =================== Scratch extension =================== 
 
