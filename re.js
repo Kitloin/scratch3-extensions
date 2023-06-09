@@ -4,15 +4,13 @@ speechRecognition = window.SpeechRecognition
 
 recognition = new speechRecognition()
 
-content = ''
-
 recognition.continuous = true
 
 // recognition is started
 
 recognition.onresult = function(event) {
 
- current = event.resultIndex;
+ var current = event.resultIndex;
 
  transcript = event.results[current][0].transcript
  
@@ -75,6 +73,7 @@ class ScratchMath {
 
 	Start({a}) {
      recognition.start()
+     content = ''
 }
 
 // ============== globalize vm and load extension ===============
