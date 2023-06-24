@@ -53,8 +53,8 @@ class ScratchMath {
 	    	id: "math",
 	    	name: "JS",
 	    	blocks: [
-		auto_block('reporter', "Fetch", "羊 fetch [a]"),
-		auto_block('reporter', "parseJSON", "羊 [PATH] of [JSON_STRING]"),
+		auto_block('reporter', "completePrompt", "羊 complete prompt [a]"),
+		auto_block('reporter', "Fetch", "羊 fetch [a]")
 	        {
 	        	blockType: 'command',
 	        	opcode: 'EvalCmd',
