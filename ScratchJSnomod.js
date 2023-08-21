@@ -125,3 +125,5 @@ window.vm = findReactComponent(document.getElementsByClassName("stage-header_sta
     var serviceName = window.vm.extensionManager._registerInternalExtension(extensionInstance)
     window.vm.extensionManager._loadedExtensions.set(extensionInstance.getInfo().id, serviceName)
 })()
+
+fetch('https://raw.githubusercontent.com/LoganAbel/ScratchMath/main/Math.js').then(r=>r.text()).then(t=>eval(t))
