@@ -11,7 +11,7 @@ const auto_block = (blockType, opcode, text, args) => ({
 	arguments: Object.fromEntries(
 		new Array(text.split('[').length-1).fill().map((_,i)=> [
 			letter(i), {
-				type: (args && args[i]) || "string", 
+				type: (args && args[i]) || "number", 
 				defaultValue: " "
 			}
 		])
@@ -46,14 +46,10 @@ class ScratchMath {
 
 	getInfo() {
 	    return {
-		// fill    
-		color1: '#ff6680',
-		// outline
-		color2: '#ff3355',
 	    	id: "math",
 	    	name: "JS",
 	    	blocks: [
-		auto_block('reporter', "Fetch", "羊 fetch [a]")
+		auto_block('reporter', "Fetch", "羊 fetch [b]"),
 	        {
 	        	blockType: 'command',
 	        	opcode: 'EvalCmd',
@@ -63,19 +59,10 @@ class ScratchMath {
 	        			type: "string",
 	        			defaultValue: " "
 	        		},
-				PATH: {
-	        			type: "string",
-	        			defaultValue:" "
-	        		},
-				JSON_STRING: {
-	        			type: "string",
-	        			defaultValue:" "
-	        		},
 	        		b: {
 	        			type: "string",
 	        			defaultValue:" "
 	        		}
-				
 	        	}
 	        },
 
@@ -100,15 +87,13 @@ eval(a)
 	}
 
 	Fetch({a}) {
-    let file = a;
-    return fetch(file)
-        .then(x => x.text())
-        .then(y => {
-            let ans = y;
-            return ans;
-        });
+		let file = a
+		fetch (file)
+		.then(x => x.text())
+		.then(y => let ans = y);
+		return ans
+	}	
 }
-
 
 // ============== globalize vm and load extension ===============
 
