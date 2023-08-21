@@ -23,7 +23,7 @@ class ScratchMath {
 
 	constructor(runtime) {
 		this.runtime = runtime
-		this.tempElem = document.createElement("link")
+	/*	this.tempElem = document.createElement("link")
 			this.tempElem.rel = "stylesheet"
 			this.tempElem.type = "text/css"
 			this.tempElem.href = "https://scratchjs.crossscar.repl.co/styles.css"
@@ -41,7 +41,7 @@ class ScratchMath {
 
 			this.consoleElems.clearBtn.addEventListener("click", () => {
 				this.console.clear()
-			})
+			}) */
 	}
 
 	getInfo() {
@@ -49,7 +49,7 @@ class ScratchMath {
 	    	id: "math",
 	    	name: "JS",
 	    	blocks: [
-		auto_block('reporter', "Fetch", "羊 fetch [b]"),
+		auto_block('reporter', "Fetch", "羊 fetch [a]"),
 	        {
 	        	blockType: 'command',
 	        	opcode: 'EvalCmd',
@@ -87,12 +87,15 @@ eval(a)
 	}
 
 	Fetch({a}) {
-		let file = a
-		fetch (file)
-		.then(x => x.text())
-		.then(y => let ans = y);
-		return ans
-	}	
+    let file = a;
+    return fetch(file)
+        .then(x => x.text())
+        .then(y => {
+            let ans = y;
+            return ans;
+        });
+}
+	
 }
 
 // ============== globalize vm and load extension ===============
