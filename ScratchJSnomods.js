@@ -53,7 +53,6 @@ class ScratchMath {
 	    	id: "math",
 	    	name: "JS",
 	    	blocks: [
-		auto_block('reporter', "completePrompt", "羊 complete prompt [a]"),
 		auto_block('reporter', "Fetch", "羊 fetch [a]")
 	        {
 	        	blockType: 'command',
@@ -109,24 +108,7 @@ eval(a)
             return ans;
         });
 }
-	parseJSON({PATH, JSON_STRING}) {
-    const path = PATH.toString().split('/').map(prop => decodeURIComponent(prop));
-    if (path[0] === '') path.splice(0, 1);
-    if (path[path.length - 1] === '') path.splice(-1, 1);
-    let json;
-    try {
-    	json = JSON.parse(' ' + JSON_STRING);
-    } catch (e) {
-	    return e.message;
-    }
-		path.forEach(prop => json = json[prop]);
-		if (json === null) return 'null';
-		else if (json === undefined) return '';
-		else if (typeof json === 'object') return JSON.stringify(json);
-		else return json.toString();
-	  }
-	
-}
+
 
 // ============== globalize vm and load extension ===============
 
