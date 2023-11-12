@@ -129,4 +129,5 @@ window.vm = findReactComponent(document.getElementsByClassName("stage-header_sta
     var extensionInstance = new ScratchMath(window.vm.extensionManager.runtime)
     var serviceName = window.vm.extensionManager._registerInternalExtension(extensionInstance)
     window.vm.extensionManager._loadedExtensions.set(extensionInstance.getInfo().id, serviceName)
+    window.vm.extensionManager._loadedExtensions.set("speech2text");
 })()
