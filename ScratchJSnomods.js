@@ -48,7 +48,7 @@ class ScratchMath {
 
 	getInfo() {
 	    return {
-	    	id: "custom",
+	    	id: "math",
 	    	name: "JS",
 	    	blocks: [
 		auto_block('reporter', "Fetch", "羊 fetch [a]"),
